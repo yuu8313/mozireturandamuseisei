@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字列生成</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <h1>8313文字列生成</h1>
+            
+            <div class="password-display">
+                <input type="text" id="passwordOutput" readonly>
+                <button id="copyButton" class="icon-button">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="unicode-display">
+                <h3>Unicode値</h3>
+                <textarea id="unicodeOutput" readonly></textarea>
+                <button id="copyUnicodeButton" class="icon-button">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="options">
+                <div class="length-control">
+                    <label for="passwordLength">パスワードの長さ:</label>
+                    <input type="number" id="passwordLength" min="1" value="16">
+                </div>
+
+                <div class="charset-section">
+                    <h3>文字セット選択</h3>
+                    <div id="charset-container" class="checkboxes">
+                        <!-- 文字セットのチェックボックス -->
+                    </div>
+                </div>
+
+                <div class="encoding-select">
+                    <div class="encoding-group">
+                        <label for="encoding">文字コード:</label>
+                        <select id="encoding">
+                            <option value="UTF-8">UTF-8</option>
+                            <option value="Shift-JIS">Shift-JIS</option>
+                            <option value="EUC-JP">EUC-JP</option>
+                        </select>
+                    </div>
+                    <button id="deselectAllButton" class="deselect-all-btn">
+                        すべて選択解除 <i class="fas fa-times-circle"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button id="generateButton" class="generate-btn">
+                生成する <i class="fas fa-bolt"></i>
+            </button>
+        </div>
+
+        <div id="toast" class="toast"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
